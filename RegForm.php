@@ -45,7 +45,7 @@
 <br>
 <br>
 <button type="submit" form="form">Submit</button> 
-<button type="reset" form="form">Reset</button> 
+<input type="reset"> 
 
 </form>
 
