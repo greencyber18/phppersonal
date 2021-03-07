@@ -68,7 +68,10 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
     {
       $connection = new db();
       $conobj = $connection->OpenCon();
-        $userQuery = $connection->InsertUser($conobj, "student", $name,$email, $username, $password,$gender);
+
+      // $userQuery = $connection->InsertUser($conobj, "registration", $fname,$uname,$email, $pass,"12","male");
+     $connection->InsertUser($conobj,"student",$name, $username, $email, $password,$gender); 
+     $connection->CloseCon($conobj);
 
     }
 }

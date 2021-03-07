@@ -13,11 +13,18 @@ function OpenCon()
  }
 
 
-function InsertUser($conn, $table, $name,$email, $username, $password,$gender)
-{
-    $result = $conn->query("INSERT INTO '". $table ."' values($name,$email, $username, $password,$gender)");
-    return $result;
-}
+ function InsertUser($conn,$table,$name, $email, $username,$password,$gender)
+ {
+     $result = "INSERT INTO " . $table . " (name,email,username,password,gender)
+     VALUES('$name','$email','$username','$password','$gender')";
+     if ($conn->query($result) === TRUE) {
+         echo "New record created successfully";
+         return $result;
+     } else {
+         echo "Error: " . $result . "<br>" . $conn->error;
+     }
+ }
+ 
 
 
 
